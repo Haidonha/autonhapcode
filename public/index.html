@@ -1,0 +1,47 @@
+<!-- /public/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Proxy Client (calls your Vercel API)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; max-width:900px; margin:20px auto; padding:1rem; }
+    input, button, textarea { width:100%; padding:.5rem; margin:.4rem 0; box-sizing:border-box; }
+    .row { display:flex; gap:.5rem; }
+  </style>
+</head>
+<body>
+  <h2>Proxy Client (Frontend)</h2>
+
+  <section>
+    <h3>Register</h3>
+    <input id="reg_email" placeholder="Email" />
+    <input id="reg_username" placeholder="Username" />
+    <input id="reg_password" placeholder="Password" type="password" />
+    <button id="btnRegister">Register</button>
+  </section>
+
+  <section>
+    <h3>Login</h3>
+    <input id="login_username" placeholder="Username" />
+    <input id="login_password" placeholder="Password" type="password" />
+    <button id="btnLogin">Login</button>
+    <p>Token: <code id="tokenShow">-</code></p>
+  </section>
+
+  <section>
+    <h3>Call Proxy</h3>
+    <select id="target">
+      <option value="web3task">web3task</option>
+      <option value="user">user</option>
+    </select>
+    <input id="path" placeholder="/v1/task/redcode/detail" />
+    <textarea id="payload" rows="5" placeholder='{"code":"ABC"}'></textarea>
+    <button id="btnCall">Call Proxy</button>
+    <pre id="result" style="background:#f4f4f4;padding:1rem;white-space:pre-wrap;"></pre>
+  </section>
+
+<script src="/public/app.js"></script>
+</body>
+</html>
